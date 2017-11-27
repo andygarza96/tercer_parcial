@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+	<title>Producción de manzanas</title>
+<script type="text/javascript">
+           function add5()
+		{
+         var pa =  document.getElementById("pactual").value;
+         var nm = +pa + 5;
+        document.getElementById("pactual").value= nm;
+		
+		}
+	function add15()
+		{
+		 var pa =  document.getElementById("pactual").value;
+         var nm = +pa + 15;
+        document.getElementById("pactual").value= nm;
+		}
+	function add30()
+		{
+		var pa =  document.getElementById("pactual").value;
+        var nm = +pa + 30;
+        document.getElementById("pactual").value= nm;
+		}
+    function add50()
+		{
+		var pa =  document.getElementById("pactual").value;
+        var nm = +pa + 50;
+        document.getElementById("pactual").value= nm;
+		}
+    function reiniciar()
+		{
+        var pa =  document.getElementById("pactual").value;
+        var nm = +pa -pa;
+        document.getElementById("pactual").value= nm;
+        document.getElementById("ptotal").value= 250;
+		}
+    function por(){
+        var pa =  document.getElementById("pactual").value;
+        var pt =  document.getElementById("ptotal").value;
+        var pp = (pa*100)/pt;
+        document.getElementById("porcentaje").value= pp+"%";
+        if(pp>=70){
+           document.getElementById("foto").src= "resources/img/next.jpg"
+        }
+    }
+    function mactual()
+		{
+        var pa =  document.getElementById("pactual").value;
+        var nm = +pa *45;
+        alert("En este momento usted cuenta con "+nm+" manzanas. ");
+		}
+    function mtotal()
+		{
+        var pt =  document.getElementById("ptotal").value;
+        var nm = +pt *45;
+        alert("Usted quiere juntar "+nm+" manzanas. ");
+
+		}
+        </script>
+</head>
+	<body>
+<h1>Producción de Manzanas</h1>     
+        
+            <img  id="foto"class="logo" src="resources/img/MANZANAS.jpg" width="260" height=auto> 
+
+        <form action="/action_page.php">
+Producción total: <input type="numeros" id="ptotal" name="Ptotal" value="250">
+                        <button  type="button"onclick="mtotal()">Número de manzanas totales</button>
+            <br>
+Producción Actual: <input type="text" id="pactual" name="pactual" value="0" readonly="readonly">
+            <button  type="button"onclick="mactual()">Número de manzanas actuales</button>
+            <br>
+            <br>
+                
+    <button  type="button" onclick="add5()">+5</button>
+    <button type="button"onclick="add15()" >+15</button>
+    <button type="button"onclick="add30()">+30</button>
+    <button type="button"onclick="add50()">+50</button>
+    <button type="button"onclick="reiniciar()">Volver a empezar</button>
+        <br>
+        <br>
+            Porcentaje: <input type="text" id="porcentaje" name="Porcentaje" value="0" readonly="readonly">
+           <br>
+            <br>
+            <button type="button"onclick="por()">Calcular porcentaje Actual</button>
+            
+</body>
+</html>
